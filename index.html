@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CinePlay 🎬 - Catálogo de Filmes e Jogos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎬 CinePlay</h1>
+    <nav>
+      <button id="btn-filmes" class="active">Filmes</button>
+      <button id="btn-jogos">Jogos</button>
+      <input type="text" id="search" placeholder="🔍 Buscar título..." />
+    </nav>
+  </header>
+
+  <main>
+    <div id="catalogo" class="grid"></div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <img id="modal-poster" alt="Poster" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-info"></p>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 CinePlay | Desenvolvido por Carlos Henrique</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
