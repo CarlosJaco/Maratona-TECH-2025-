@@ -1,31 +1,5 @@
 // ====== DADOS DE EXEMPLO ======
 const catalogoBase = {
-  filmes: [
-    {
-      titulo: "Interestelar",
-      ano: 2014,
-      genero: "Ficção científica",
-      nota: 8.6,
-      descricao: "Um grupo de exploradores viaja através de um buraco de minhoca em busca de um novo lar para a humanidade.",
-      imagem: "https://image.tmdb.org/t/p/w500/nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg"
-    },
-    {
-      titulo: "Matrix",
-      ano: 1999,
-      genero: "Ação, Ficção científica",
-      nota: 8.7,
-      descricao: "Um hacker descobre a verdade sobre a realidade e luta contra máquinas que controlam o mundo.",
-      imagem: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
-    },
-    {
-      titulo: "Avatar: O Caminho da Água",
-      ano: 2022,
-      genero: "Aventura, Fantasia",
-      nota: 7.8,
-      descricao: "Jake Sully vive com sua nova família em Pandora, mas uma ameaça antiga retorna.",
-      imagem: "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg"
-    }
-  ],
   jogos: [
     {
       titulo: "The Legend of Zelda: Breath of the Wild",
