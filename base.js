@@ -6,7 +6,7 @@ const catalogoBase = [
     genero: "Aventura",
     nota: 9.5,
     descricao: "Explore o vasto mundo de Hyrule e descubra seus segredos em um jogo revolucionário.",
-    imagem: "imagens/zelda.jpg"
+    imagem: "img/zelda.jpg"
   },
   {
     titulo: "God of War Ragnarök",
