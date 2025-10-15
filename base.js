@@ -7,7 +7,7 @@ const catalogoBase = {
       genero: "Aventura",
       nota: 9.5,
       descricao: "Explore o vasto mundo de Hyrule e descubra seus segredos em um jogo revolucionário.",
-      imagem: "https://cdn.cloudflare.steamstatic.com/steam/apps/729040/header.jpg?t=1677160299"
+      imagem: "tablet-1.jpg/img"
     },
     {
       titulo: "God of War Ragnarök",
