@@ -40,7 +40,7 @@ header h1 {
 /* ===== CATÁLOGO (3 colunas por linha) ===== */
 #catalogo {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 3fr);
   gap: 1.5rem;
   width: 90%;
   max-width: 1100px;
