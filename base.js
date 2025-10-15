@@ -1,37 +1,33 @@
-// ====== DADOS DE EXEMPLO ======
-const catalogoBase = {
-  jogos: [
-    {
-      titulo: "The Legend of Zelda: Breath of the Wild",
-      ano: 2017,
-      genero: "Aventura",
-      nota: 9.5,
-      descricao: "Explore o vasto mundo de Hyrule e descubra seus segredos em um jogo revolucionário.",
-      imagem: "tablet-1.jpg/img"
-    },
-    {
-      titulo: "God of War Ragnarök",
-      ano: 2022,
-      genero: "Ação",
-      nota: 9.3,
-      descricao: "Kratos e Atreus enfrentam novos desafios em uma jornada épica pelos Nove Reinos.",
-      imagem: "https://image.api.playstation.com/vulcan/ap/rnd/202208/0817/oZmyK9DMzIPVfQ2Dbuq8HhfL.png"
-    },
-    {
-      titulo: "Cyberpunk 2077",
-      ano: 2020,
-      genero: "RPG, Mundo aberto",
-      nota: 7.9,
-      descricao: "Mergulhe em Night City, uma metrópole futurista cheia de ação e intrigas.",
-      imagem: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg"
-    }
-  ]
-};
+// ====== DADOS DE JOGOS ======
+const catalogoBase = [
+  {
+    titulo: "The Legend of Zelda: Breath of the Wild",
+    ano: 2017,
+    genero: "Aventura",
+    nota: 9.5,
+    descricao: "Explore o vasto mundo de Hyrule e descubra seus segredos em um jogo revolucionário.",
+    imagem: "imagens/zelda.jpg"
+  },
+  {
+    titulo: "God of War Ragnarök",
+    ano: 2022,
+    genero: "Ação",
+    nota: 9.3,
+    descricao: "Kratos e Atreus enfrentam novos desafios em uma jornada épica pelos Nove Reinos.",
+    imagem: "imagens/godofwar.jpg"
+  },
+  {
+    titulo: "Cyberpunk 2077",
+    ano: 2020,
+    genero: "RPG, Mundo Aberto",
+    nota: 7.9,
+    descricao: "Mergulhe em Night City, uma metrópole futurista cheia de ação e intrigas.",
+    imagem: "imagens/cyberpunk.jpg"
+  }
+];
 
 // ====== ELEMENTOS ======
 const catalogoEl = document.getElementById("catalogo");
-const btnFilmes = document.getElementById("btn-filmes");
-const btnJogos = document.getElementById("btn-jogos");
 const searchInput = document.getElementById("search");
 const modal = document.getElementById("modal");
 const modalPoster = document.getElementById("modal-poster");
@@ -40,18 +36,16 @@ const modalInfo = document.getElementById("modal-info");
 const modalDesc = document.getElementById("modal-desc");
 const closeModal = document.getElementById("close-modal");
 
-let tipoAtual = "filmes";
-
 // ====== FUNÇÕES ======
-function renderCatalogo(tipo, filtro = "") {
+function renderCatalogo(filtro = "") {
   catalogoEl.innerHTML = "";
 
-  const lista = catalogoBase[tipo].filter(item =>
+  const lista = catalogoBase.filter(item =>
     item.titulo.toLowerCase().includes(filtro.toLowerCase())
   );
 
   if (lista.length === 0) {
-    catalogoEl.innerHTML = "<p>Nenhum resultado encontrado 😢</p>";
+    catalogoEl.innerHTML = "<p>Nenhum jogo encontrado 😢</p>";
     return;
   }
 
@@ -84,24 +78,9 @@ window.addEventListener("click", e => {
   if (e.target === modal) modal.classList.add("hidden");
 });
 
-// ====== EVENTOS ======
-btnFilmes.addEventListener("click", () => {
-  tipoAtual = "filmes";
-  btnFilmes.classList.add("active");
-  btnJogos.classList.remove("active");
-  renderCatalogo("filmes", searchInput.value);
-});
-
-btnJogos.addEventListener("click", () => {
-  tipoAtual = "jogos";
-  btnJogos.classList.add("active");
-  btnFilmes.classList.remove("active");
-  renderCatalogo("jogos", searchInput.value);
-});
-
 searchInput.addEventListener("input", e => {
-  renderCatalogo(tipoAtual, e.target.value);
+  renderCatalogo(e.target.value);
 });
 
 // ====== INICIALIZAÇÃO ======
-renderCatalogo("filmes");
+renderCatalogo();
