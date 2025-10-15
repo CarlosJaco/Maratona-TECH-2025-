@@ -17,7 +17,7 @@ const catalogoBase = [
     imagem: "img/Godwar-asset.jpg"
   },
   {
-    titulo: "Cyberpunk 2077",
+    titulo: "Cyberpunk 2080",
     ano: 2020,
     genero: "RPG, Mundo Aberto",
     nota: 7.9,
