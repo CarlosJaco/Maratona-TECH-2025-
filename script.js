@@ -21,7 +21,7 @@ const catalogoBase = [
     ano: 2009,
     genero: "sandbox, sobrevivência, Mundo aberto",
     nota: 8.8,
-    descricao: "Mergulhe em Night City, uma metrópole futurista cheia de ação e intrigas.",
+    descricao: "Minecraft é um jogo sandbox em mundo aberto, onde os jogadores exploram e constroem livremente em um mundo tridimensional feito de blocos.",
     imagem: "img/minicraft.jpg"
   }
 ];
