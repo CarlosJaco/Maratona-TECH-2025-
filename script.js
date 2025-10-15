@@ -14,7 +14,7 @@ const catalogoBase = [
     genero: "Ação",
     nota: 9.3,
     descricao: "Kratos e Atreus enfrentam novos desafios em uma jornada épica pelos Nove Reinos.",
-    imagem: "img/godofwar.jpg"
+    imagem: "img/Godwar-asset.jpg"
   },
   {
     titulo: "Cyberpunk 2077",
