@@ -1,4 +1,3 @@
-// ====== DADOS DE JOGOS ======
 const catalogoBase = [
   {
     titulo: "The Legend of Zelda: Breath of the Wild",
@@ -29,27 +28,23 @@ const catalogoBase = [
   }
 ];
 
-// ====== ELEMENTOS ======
+// ELEMENTOS
 const catalogoEl = document.getElementById("catalogo");
 const searchInput = document.getElementById("search");
-const detalhesSec = document.getElementById("detalhes");
+const detalhesEl = document.getElementById("detalhes");
 const detalhesPoster = document.getElementById("detalhes-poster");
 const detalhesTitulo = document.getElementById("detalhes-titulo");
 const detalhesDescricao = document.getElementById("detalhes-descricao");
 const detalhesTrailer = document.getElementById("detalhes-trailer");
+const voltarBtn = document.getElementById("voltar");
 
-// ====== FUNÇÕES ======
+// FUNÇÕES
 function renderCatalogo(filtro = "") {
   catalogoEl.innerHTML = "";
 
   const lista = catalogoBase.filter(item =>
     item.titulo.toLowerCase().includes(filtro.toLowerCase())
   );
-
-  if (lista.length === 0) {
-    catalogoEl.innerHTML = "<p>Nenhum jogo encontrado 😢</p>";
-    return;
-  }
 
   lista.forEach(item => {
     const card = document.createElement("div");
@@ -62,23 +57,30 @@ function renderCatalogo(filtro = "") {
         <p>⭐ ${item.nota}</p>
       </div>
     `;
-    card.addEventListener("click", () => mostrarDetalhes(item));
+    card.addEventListener("click", () => abrirDetalhes(item));
     catalogoEl.appendChild(card);
   });
 }
 
-function mostrarDetalhes(item) {
+function abrirDetalhes(item) {
   detalhesPoster.src = item.imagem;
   detalhesTitulo.textContent = item.titulo;
   detalhesDescricao.textContent = item.descricao;
   detalhesTrailer.src = item.trailer;
-  detalhesSec.classList.remove("hidden");
 
-  // Scroll suave até a área de detalhes
-  detalhesSec.scrollIntoView({ behavior: "smooth" });
+  detalhesEl.classList.add("active");
+  catalogoEl.style.filter = "blur(5px)";
+  catalogoEl.style.opacity = "0.4";
 }
+
+voltarBtn.addEventListener("click", () => {
+  detalhesEl.classList.remove("active");
+  detalhesTrailer.src = "";
+  catalogoEl.style.filter = "none";
+  catalogoEl.style.opacity = "1";
+});
 
 searchInput.addEventListener("input", e => renderCatalogo(e.target.value));
 
-// ====== INICIALIZAÇÃO ======
+// INICIALIZAÇÃO
 renderCatalogo();
