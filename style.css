@@ -1,10 +1,10 @@
 /* ====== ESTILOS GERAIS ====== */
 :root {
-  --primary: #0b69ff;
-  --bg: #0e1726;
-  --card: #182235;
+  --primary: #14ffec;
+  --bg: #050914;
+  --card: #0d1b2a;
   --text: #ffffff;
-  --accent: #ffb86b;
+  --accent: #ffb703;
 }
 
 * {
