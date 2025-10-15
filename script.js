@@ -20,7 +20,7 @@ const catalogoBase = [
     titulo: "Cyberpunk 2080",
     ano: 2020,
     genero: "RPG, Mundo Aberto",
-    nota: 7.9,
+    nota: 20.0,
     descricao: "Mergulhe em Night City, uma metrópole futurista cheia de ação e intrigas.",
     imagem: "img/minicraft.jpg"
   }
