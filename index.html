@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Jogos</title>
+  <title>Catálogo Gamer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>🎮 Game.Play</h1>
-    <input type="text" id="search" placeholder="Buscar jogo...">
+    <h1>🎮 Catálogo Gamer</h1>
   </header>
+
+  <input type="text" id="search" placeholder="Buscar jogo...">
 
   <main id="catalogo"></main>
 
-  <!-- Modal -->
-<div id="modal" class="modal hidden">
-  <div class="modal-content">
-    <span id="close-modal">&times;</span>
-    <img id="modal-poster" alt="Poster do jogo" />
-    <h2 id="modal-title"></h2>
-    <p id="modal-info"></p>
-    <p id="modal-desc"></p>
-    <iframe id="modal-trailer" frameborder="0" allowfullscreen></iframe>
+  <div id="modal" class="hidden">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <img id="modal-poster" alt="">
+      <h2 id="modal-title"></h2>
+      <p id="modal-info"></p>
+      <p id="modal-desc"></p>
+      <iframe id="modal-trailer" allowfullscreen></iframe>
+    </div>
   </div>
-</div>
-
 
   <script src="script.js"></script>
 </body>
