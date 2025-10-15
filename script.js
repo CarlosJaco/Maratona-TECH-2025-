@@ -6,7 +6,8 @@ const catalogoBase = [
     genero: "Aventura",
     nota: 9.5,
     descricao: "Explore o vasto mundo de Hyrule e descubra seus segredos em um jogo revolucionário.",
-    imagem: "img/tablet-1.jpg"
+    imagem: "img/tablet-1.jpg",
+    trailer: "https://www.youtube.com/embed/1rPxiXXxftE"
   },
   {
     titulo: "God of War Ragnarök",
@@ -14,15 +15,17 @@ const catalogoBase = [
     genero: "Ação",
     nota: 9.3,
     descricao: "Kratos e Atreus enfrentam novos desafios em uma jornada épica pelos Nove Reinos.",
-    imagem: "img/Godwar-asset.jpg"
+    imagem: "img/Godwar-asset.jpg",
+    trailer: "https://www.youtube.com/embed/EE-4GvjKcfs"
   },
   {
     titulo: "Minecraft",
     ano: 2009,
-    genero: "sandbox, sobrevivência, Mundo aberto",
+    genero: "Sandbox, Sobrevivência, Mundo Aberto",
     nota: 8.8,
     descricao: "Minecraft é um jogo sandbox em mundo aberto, onde os jogadores exploram e constroem livremente em um mundo tridimensional feito de blocos.",
-    imagem: "img/minicraft.jpg"
+    imagem: "img/minicraft.jpg",
+    trailer: "https://www.youtube.com/embed/MmB9b5njVbA"
   }
 ];
 
@@ -34,6 +37,7 @@ const modalPoster = document.getElementById("modal-poster");
 const modalTitle = document.getElementById("modal-title");
 const modalInfo = document.getElementById("modal-info");
 const modalDesc = document.getElementById("modal-desc");
+const modalTrailer = document.getElementById("modal-trailer");
 const closeModal = document.getElementById("close-modal");
 
 // ====== FUNÇÕES ======
@@ -70,12 +74,20 @@ function abrirModal(item) {
   modalTitle.textContent = item.titulo;
   modalInfo.textContent = `${item.genero} • ${item.ano} • ⭐ ${item.nota}`;
   modalDesc.textContent = item.descricao;
+  modalTrailer.src = item.trailer; // <-- mostra o trailer
   modal.classList.remove("hidden");
 }
 
-closeModal.addEventListener("click", () => modal.classList.add("hidden"));
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  modalTrailer.src = ""; // para o vídeo ao fechar
+});
+
 window.addEventListener("click", e => {
-  if (e.target === modal) modal.classList.add("hidden");
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    modalTrailer.src = "";
+  }
 });
 
 searchInput.addEventListener("input", e => {
