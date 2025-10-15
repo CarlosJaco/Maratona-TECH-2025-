@@ -74,22 +74,25 @@ function abrirModal(item) {
   modalTitle.textContent = item.titulo;
   modalInfo.textContent = `${item.genero} • ${item.ano} • ⭐ ${item.nota}`;
   modalDesc.textContent = item.descricao;
-  modalTrailer.src = item.trailer; // <-- mostra o trailer
+  modalTrailer.src = item.trailer + "?autoplay=1"; // autoplay suave
   modal.classList.remove("hidden");
 }
 
-closeModal.addEventListener("click", () => {
+// ====== FECHAR MODAL ======
+function fecharModal() {
   modal.classList.add("hidden");
-  modalTrailer.src = ""; // para o vídeo ao fechar
-});
+  modalTrailer.src = ""; // pausa o vídeo
+}
 
+// Fecha ao clicar no X
+closeModal.addEventListener("click", fecharModal);
+
+// Fecha ao clicar fora do modal
 window.addEventListener("click", e => {
-  if (e.target === modal) {
-    modal.classList.add("hidden");
-    modalTrailer.src = "";
-  }
+  if (e.target === modal) fecharModal();
 });
 
+// ====== PESQUISA ======
 searchInput.addEventListener("input", e => {
   renderCatalogo(e.target.value);
 });
