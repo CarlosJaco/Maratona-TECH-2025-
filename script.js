@@ -32,13 +32,11 @@ const catalogoBase = [
 // ====== ELEMENTOS ======
 const catalogoEl = document.getElementById("catalogo");
 const searchInput = document.getElementById("search");
-const modal = document.getElementById("modal");
-const modalPoster = document.getElementById("modal-poster");
-const modalTitle = document.getElementById("modal-title");
-const modalInfo = document.getElementById("modal-info");
-const modalDesc = document.getElementById("modal-desc");
-const modalTrailer = document.getElementById("modal-trailer");
-const closeModal = document.getElementById("close-modal");
+const detalhesSec = document.getElementById("detalhes");
+const detalhesPoster = document.getElementById("detalhes-poster");
+const detalhesTitulo = document.getElementById("detalhes-titulo");
+const detalhesDescricao = document.getElementById("detalhes-descricao");
+const detalhesTrailer = document.getElementById("detalhes-trailer");
 
 // ====== FUNÇÕES ======
 function renderCatalogo(filtro = "") {
@@ -64,29 +62,22 @@ function renderCatalogo(filtro = "") {
         <p>⭐ ${item.nota}</p>
       </div>
     `;
-    card.addEventListener("click", () => abrirModal(item));
+    card.addEventListener("click", () => mostrarDetalhes(item));
     catalogoEl.appendChild(card);
   });
 }
 
-function abrirModal(item) {
-  modalPoster.src = item.imagem;
-  modalTitle.textContent = item.titulo;
-  modalInfo.textContent = `${item.genero} • ${item.ano} • ⭐ ${item.nota}`;
-  modalDesc.textContent = item.descricao;
-  modalTrailer.src = item.trailer + "?autoplay=1";
-  modal.classList.remove("hidden");
+function mostrarDetalhes(item) {
+  detalhesPoster.src = item.imagem;
+  detalhesTitulo.textContent = item.titulo;
+  detalhesDescricao.textContent = item.descricao;
+  detalhesTrailer.src = item.trailer;
+  detalhesSec.classList.remove("hidden");
+
+  // Scroll suave até a área de detalhes
+  detalhesSec.scrollIntoView({ behavior: "smooth" });
 }
 
-function fecharModal() {
-  modal.classList.add("hidden");
-  modalTrailer.src = "";
-}
-
-closeModal.addEventListener("click", fecharModal);
-window.addEventListener("click", e => {
-  if (e.target === modal) fecharModal();
-});
 searchInput.addEventListener("input", e => renderCatalogo(e.target.value));
 
 // ====== INICIALIZAÇÃO ======
