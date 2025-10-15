@@ -22,7 +22,7 @@ const catalogoBase = [
     genero: "RPG, Mundo Aberto",
     nota: 7.9,
     descricao: "Mergulhe em Night City, uma metrópole futurista cheia de ação e intrigas.",
-    imagem: "img/cyberpunk.jpg"
+    imagem: "img/minicraft.jpg"
   }
 ];
 
