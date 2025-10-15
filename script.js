@@ -14,7 +14,7 @@ const catalogoBase = [
     genero: "Ação",
     nota: 9.3,
     descricao: "Kratos e Atreus enfrentam novos desafios em uma jornada épica pelos Nove Reinos.",
-    imagem: "imagens/godofwar.jpg"
+    imagem: "img/godofwar.jpg"
   },
   {
     titulo: "Cyberpunk 2077",
@@ -22,7 +22,7 @@ const catalogoBase = [
     genero: "RPG, Mundo Aberto",
     nota: 7.9,
     descricao: "Mergulhe em Night City, uma metrópole futurista cheia de ação e intrigas.",
-    imagem: "imagens/cyberpunk.jpg"
+    imagem: "img/cyberpunk.jpg"
   }
 ];
 
