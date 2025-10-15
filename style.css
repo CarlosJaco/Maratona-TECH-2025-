@@ -2,7 +2,6 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  /* background gamer */
   background: radial-gradient(1200px 600px at 10% 10%, rgba(0,255,200,0.06), transparent 8%),
               linear-gradient(135deg, #0f0f1a 30%, #1a0033 100%);
   color: #fff;
@@ -12,7 +11,6 @@ body {
   align-items: center;
 }
 
-/* Se tiver header, ajuste o estilo aqui */
 header {
   width: 100%;
   text-align: center;
@@ -29,22 +27,20 @@ header h1 {
   letter-spacing: 1.5px;
 }
 
-/* ===== CATALOGO: organizar em colunas com 3 itens por coluna ===== */
-/* Aplica ao elemento com id="catalogo" */
+/* ===== CATALOGO: 3 jogos por coluna ===== */
 #catalogo {
   width: 90%;
   max-width: 1100px;
   margin: 2rem auto;
   display: grid;
-  grid-auto-flow: column;                 /* "preenche por linhas" criando colunas */
-  grid-template-rows: repeat(3, auto);    /* 3 linhas por coluna */
-  gap: 1.2rem;                            /* espaço entre cards (row & column) */
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, auto);
+  gap: 1.2rem;
   justify-content: center;
   align-items: start;
   padding-bottom: 2rem;
 }
 
-/* CARTÃO (poster) */
 .card {
   background-color: rgba(255,255,255,0.04);
   border-radius: 10px;
@@ -53,7 +49,7 @@ header h1 {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
   width: 100%;
-  max-width: 260px;   /* controla a largura do cartão */
+  max-width: 260px;
   display: flex;
   flex-direction: column;
 }
@@ -65,7 +61,7 @@ header h1 {
 
 .card img {
   width: 100%;
-  height: 340px;     /* altura uniforme para todos os posters */
+  height: 340px;
   object-fit: cover;
   display: block;
   border-bottom: 3px solid rgba(0,255,200,0.08);
@@ -82,35 +78,23 @@ header h1 {
   color: #e6fff7;
 }
 
-/* ===== MODAL (mantém como anteriormente) ===== */
-/* ... mantenha seu modal CSS atual ou cole aqui as regras anteriores ... */
-
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1000px) {
-  /* Em telas menores, reduzir largura dos cards */
-  #catalogo {
-    grid-template-rows: repeat(3, auto); /* ainda 3 linhas por coluna, menos colunas visíveis */
-    gap: 1rem;
-  }
-
+  #catalogo { gap: 1rem; }
   .card img { height: 300px; }
   .card { max-width: 220px; }
 }
 
 @media (max-width: 700px) {
-  /* Em celular: voltar para comportamento em linhas (fila) com 2 por linha ou 1 por linha */
   #catalogo {
-    grid-auto-flow: row;                 /* preenche por colunas normais */
+    grid-auto-flow: row;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: none;
   }
   .card img { height: 220px; }
-  .card { max-width: none; }
 }
 
 @media (max-width: 420px) {
-  #catalogo {
-    grid-template-columns: 1fr;
-  }
+  #catalogo { grid-template-columns: 1fr; }
   .card img { height: 200px; }
 }
