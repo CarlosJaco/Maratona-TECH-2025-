@@ -28,7 +28,6 @@ const catalogoBase = [
   }
 ];
 
-// ELEMENTOS
 const catalogoEl = document.getElementById("catalogo");
 const searchInput = document.getElementById("search");
 const detalhesEl = document.getElementById("detalhes");
@@ -36,9 +35,8 @@ const detalhesPoster = document.getElementById("detalhes-poster");
 const detalhesTitulo = document.getElementById("detalhes-titulo");
 const detalhesDescricao = document.getElementById("detalhes-descricao");
 const detalhesTrailer = document.getElementById("detalhes-trailer");
-const voltarBtn = document.getElementById("voltar");
+const fecharBtn = document.getElementById("fechar-detalhes");
 
-// FUNÇÕES
 function renderCatalogo(filtro = "") {
   catalogoEl.innerHTML = "";
 
@@ -66,20 +64,21 @@ function abrirDetalhes(item) {
   detalhesPoster.src = item.imagem;
   detalhesTitulo.textContent = item.titulo;
   detalhesDescricao.textContent = item.descricao;
-  detalhesTrailer.src = item.trailer;
+  detalhesTrailer.src = item.trailer + "?autoplay=1";
 
   detalhesEl.classList.add("active");
-  catalogoEl.style.filter = "blur(5px)";
-  catalogoEl.style.opacity = "0.4";
+  catalogoEl.style.filter = "blur(6px)";
+  catalogoEl.style.opacity = "0.3";
 }
 
-voltarBtn.addEventListener("click", () => {
+function fecharDetalhes() {
   detalhesEl.classList.remove("active");
   detalhesTrailer.src = "";
   catalogoEl.style.filter = "none";
   catalogoEl.style.opacity = "1";
-});
+}
 
+fecharBtn.addEventListener("click", fecharDetalhes);
 searchInput.addEventListener("input", e => renderCatalogo(e.target.value));
 
 // INICIALIZAÇÃO
