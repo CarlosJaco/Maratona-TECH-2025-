@@ -1,3 +1,39 @@
+/* ===== CATÁLOGO ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3 por linha em telas médias/grandes */
+  gap: 1.2rem;
+  justify-items: center;
+  padding: 1rem;
+}
+
+/* ===== CARD ===== */
+.card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 260px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 380px; /* altura fixa e proporcional */
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 0.6rem;
+  text-align: center;
+}
+
 /* ===== MODAL ===== */
 #modal {
   position: fixed;
@@ -26,23 +62,20 @@
   max-height: 90vh;
 }
 
-/* ===== IMAGEM DO MODAL (CORRIGIDO) ===== */
+/* ===== IMAGEM DO MODAL ===== */
 #modal-poster {
-  max-width: 50%;          /* ocupa no máximo metade da largura do modal */
-  max-height: 30px;       /* impede a imagem de ultrapassar 300px de altura */
-  width: auto;             /* ajusta automaticamente a largura */
-  height: auto;
-  object-fit: contain;     /* mantém proporção sem cortar */
+  max-width: 70%;         /* ocupa 70% da largura do modal */
+  max-height: 400px;      /* imagem grande, mas ainda proporcional */
+  object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
 }
 
-
-/* título e texto */
+/* ===== TEXTO E TRAILER ===== */
 #modal-title {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
@@ -60,7 +93,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* trailer */
 #modal-trailer {
   width: 100%;
   height: 315px;
@@ -68,7 +100,7 @@
   border-radius: 8px;
 }
 
-/* botão de fechar */
+/* ===== BOTÃO FECHAR ===== */
 #close-modal {
   position: absolute;
   top: 0.7rem;
@@ -77,9 +109,21 @@
   cursor: pointer;
   color: #fff;
   z-index: 9999;
+  transition: color 0.2s ease;
 }
 
 #close-modal:hover {
   color: #f33;
 }
 
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  #modal-poster {
+    max-width: 90%;
+    max-height: 250px;
+  }
+}
