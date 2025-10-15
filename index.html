@@ -1,36 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎮 Game.Play - Catálogo de Jogos</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Jogos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>🎮 Game.Play</h1>
-    <nav>
-      <input type="text" id="search" placeholder="🔍 Buscar título..." />
-    </nav>
+    <input type="text" id="search" placeholder="Buscar jogo...">
   </header>
 
-  <main>
-    <div id="catalogo" class="grid"></div>
-  </main>
+  <main id="catalogo"></main>
 
-  <div id="modal" class="modal hidden">
+  <!-- Modal -->
+  <div id="modal" class="hidden">
     <div class="modal-content">
       <span id="close-modal">&times;</span>
-      <img id="modal-poster" alt="Poster do jogo" />
+      <img id="modal-poster" alt="Poster do jogo">
       <h2 id="modal-title"></h2>
       <p id="modal-info"></p>
       <p id="modal-desc"></p>
+      <iframe id="modal-trailer" src="" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
-
-  <footer>
-    <p>© 2025 Game.Play | Desenvolvido por Carlos Henrique</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
