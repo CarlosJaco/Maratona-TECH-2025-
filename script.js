@@ -84,14 +84,10 @@ function fecharModal() {
 }
 
 closeModal.addEventListener("click", fecharModal);
-
 window.addEventListener("click", e => {
   if (e.target === modal) fecharModal();
 });
-
-searchInput.addEventListener("input", e => {
-  renderCatalogo(e.target.value);
-});
+searchInput.addEventListener("input", e => renderCatalogo(e.target.value));
 
 // ====== INICIALIZAÇÃO ======
 renderCatalogo();
