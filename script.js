@@ -20,7 +20,7 @@ const catalogoBase = [
     titulo: "Minecraft",
     ano: 2009,
     genero: "sandbox, sobrevivência, Mundo aberto",
-    nota: 20.0,
+    nota: 8.8,
     descricao: "Mergulhe em Night City, uma metrópole futurista cheia de ação e intrigas.",
     imagem: "img/minicraft.jpg"
   }
