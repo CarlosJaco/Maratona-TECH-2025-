@@ -184,3 +184,63 @@ header h1 {
     height: 220px;
   }
 }
+
+/* ===== COMENTÁRIOS ===== */
+#comentarios {
+  margin-top: 2rem;
+  text-align: left;
+  background: rgba(255,255,255,0.03);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,255,200,0.08);
+}
+
+#comentarios h3 {
+  color: #00ffcc;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+#lista-comentarios {
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.comentario {
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 0.5rem;
+  color: #eaeaea;
+  font-size: 0.95rem;
+}
+
+.comentar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#comentario-input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+#enviar-comentario {
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+#enviar-comentario:hover {
+  opacity: 0.8;
+}
+
