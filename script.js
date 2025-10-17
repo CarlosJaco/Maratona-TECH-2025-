@@ -83,3 +83,50 @@ searchInput.addEventListener("input", e => renderCatalogo(e.target.value));
 
 // INICIALIZAÇÃO
 renderCatalogo();
+
+// ===== COMENTÁRIOS (simulação local) =====
+const listaComentarios = document.getElementById("lista-comentarios");
+const comentarioInput = document.getElementById("comentario-input");
+const enviarComentarioBtn = document.getElementById("enviar-comentario");
+
+// Objeto para guardar comentários por jogo
+const comentariosPorJogo = {};
+
+enviarComentarioBtn.addEventListener("click", () => {
+  const texto = comentarioInput.value.trim();
+  if (texto === "") return;
+
+  const tituloAtual = detalhesTitulo.textContent;
+  if (!comentariosPorJogo[tituloAtual]) comentariosPorJogo[tituloAtual] = [];
+
+  comentariosPorJogo[tituloAtual].push(texto);
+  comentarioInput.value = "";
+
+  renderComentarios(tituloAtual);
+});
+
+function renderComentarios(titulo) {
+  listaComentarios.innerHTML = "";
+  const lista = comentariosPorJogo[titulo] || [];
+  lista.forEach(c => {
+    const div = document.createElement("div");
+    div.className = "comentario";
+    div.textContent = c;
+    listaComentarios.appendChild(div);
+  });
+}
+
+// Adapte a função abrirDetalhes para carregar comentários também:
+function abrirDetalhes(item) {
+  detalhesPoster.src = item.imagem;
+  detalhesTitulo.textContent = item.titulo;
+  detalhesDescricao.textContent = item.descricao;
+  detalhesTrailer.src = item.trailer + "?autoplay=1";
+
+  detalhesEl.classList.add("active");
+  catalogoEl.style.filter = "blur(6px)";
+  catalogoEl.style.opacity = "0.3";
+
+  renderComentarios(item.titulo); // ← carrega comentários do jogo atual
+}
+
